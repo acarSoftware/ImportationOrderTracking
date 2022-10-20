@@ -1,0 +1,38 @@
+<notlar>
+  <not id="1">Private yapalım</not>
+  <not id="2">Örnek classlar
+  
+  
+    public abstract class Entity
+    {
+        public int Id { get; set; }
+    }
+    public class User : Entity
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Mobile { get; set; }
+    }
+    public class CompanyTur : Entity
+    {
+        public string Name { get; set; }
+
+        public ICollection<Company> Companies { get; set; }
+    }
+    public class Company
+    {
+        public int CompanyTurId { get; set; }
+        public string Address { get; set; }
+        public string TaxNumber { get; set; }
+
+        public CompanyTur CompanyTur { get; set; }
+        public ICollection<CompanyUser> CompanyUsers  { get; set; }
+    }
+
+    public class CompanyUser : User
+    {
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
+    }
+  </not>
+</notlar>
